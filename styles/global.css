@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "HKGrotesk";
+  src: url("../assets/fonts/HKGrotesk-Regular.ttf.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HKGrotesk-Bold";
+  src: url("../assets/fonts/HKGrotesk-Bold.ttf.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bembo";
+  src: url("../assets/fonts/BemboStd.ttf.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bembo-Semibold";
+  src: url("../assets/fonts/BemboStd-Semibold.ttf.ttf") format("truetype");
+}
+
+#intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: initial;
+  max-height: initial;
+  background-color: #000000;
+}
+
+#intro h1 {
+  color: #dc1156;
+}
+
+html,
+body {
+  font: normal normal 150% "HKGrotesk", sans-serif;
+  font-size: 1.6rem;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+html h1,
+body h1 {
+  font: normal normal 150% "Bembo-Semibold";
+  font-size: 6.4rem;
+}
+
+html h2,
+body h2 {
+  font: normal normal 150% "HKGrotesk-Bold", sans-serif;
+  font-size: 3.2rem;
+}
+
+html p,
+html a,
+html li,
+html span,
+html button,
+body p,
+body a,
+body li,
+body span,
+body button {
+  font-size: 1.6rem;
+}
+
+html a,
+html button,
+body a,
+body button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+html a:focus, html a:active, html a:visited, html a:link, html a:hover,
+body a:focus,
+body a:active,
+body a:visited,
+body a:link,
+body a:hover {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+html ul,
+body ul {
+  list-style: none;
+}
+
+html img,
+body img {
+  max-width: 100%;
+  display: block;
+}
+
+html *,
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=global.css.map */
