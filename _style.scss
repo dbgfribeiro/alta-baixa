@@ -1,9 +1,59 @@
-#intro {
-  @include flex($justify: center);
-  @include size(100vw, 100vh);
-  background-color: $black;
+header {
+  nav {
+    @include flex($justify: space-between);
+    position: fixed;
+    width: 100%;
+    padding: 2rem;
+    backdrop-filter: blur(14px);
 
-  h1 {
-    color: $pink;
+    ul {
+      @include flex(column, flex-end);
+      float: right;
+      text-align: right;
+
+      li {
+        padding: 0.16rem 0.32rem;
+        color: $white;
+
+        &:hover {
+          background-color: $white;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+main {
+  #home {
+    @include flex($justify: center);
+    @include size(100%, 100vh);
+    background-color: $black;
+
+    h1 {
+      color: $white;
+      font-size: 12.8rem;
+
+      span {
+        font-family: $bembo-semibold;
+      }
+    }
+  }
+
+  #intro {
+    padding: 12rem 6rem;
+
+    .info-container {
+      h2 {
+        &:first-child {
+          font-family: $hkgrotesk-bold;
+        }
+
+        &:last-child {
+          font-family: $bembo;
+          margin-top: 3.2rem;
+        }
+      }
+    }
   }
 }

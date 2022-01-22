@@ -8,27 +8,38 @@ html,
 body {
   @include font();
   font-size: 10px;
-  overflow: hidden;
+  overflow: auto;
+  scroll-behavior: smooth;
 
   h1 {
-    @include font ($size: $title, $family: $bembo-semibold);
+    @include font ($size: $heading, $line: 90%, $family: $hkgrotesk-bold);
   }
 
   h2 {
-    @include font ($size: $subtitle, $family: $hkgrotesk-bold);
+    @include font ($size: $title, $family: $bembo-semibold);
+  }
+
+  h3 {
+    @include font ($size: $subtitle, $family: $bembo);
+  }
+
+  p {
+    @include font ($size: $subtitle, $family: $hkgrotesk);
   }
 
   p,
   a,
   li,
-  span,
   button {
     font-size: $text;
   }
 
   a,
   button {
+    @include font ($size: $text, $family: $bembo);
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
     border: none;
     cursor: pointer;
   }
@@ -60,4 +71,20 @@ body {
     margin: 0;
     padding: 0;
   }
+}
+
+::-webkit-scrollbar {
+  width: 1.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $white
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $gray;
 }
