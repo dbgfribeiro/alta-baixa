@@ -31,34 +31,29 @@ header nav {
   position: fixed;
   width: 100%;
   padding: 2rem;
-  -webkit-backdrop-filter: blur(0.8rem);
-          backdrop-filter: blur(0.8rem);
-  z-index: 3;
+  background-color: #000000;
+  z-index: 4;
 }
 
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6.4rem;
   float: right;
   text-align: right;
 }
 
 header nav ul li {
-  padding: 0.16rem 0.32rem;
+  padding: 0.16rems 0.32rem;
   color: #ffffff;
 }
 
 header nav ul li:hover {
-  background-color: #ffffff;
-  color: #000000;
+  text-decoration: underline;
 }
 
 main #home {
@@ -100,7 +95,7 @@ main #intro .info-container h2:last-child {
   margin-top: 3.2rem;
 }
 
-main #index {
+main #articles {
   width: 100%;
   height: 100vh;
   max-width: initial;
@@ -108,7 +103,13 @@ main #index {
   background-color: #ffffff;
 }
 
-main #index .articles-container {
+@media only screen and (max-width: 1024px) {
+  main #articles {
+    height: initial;
+  }
+}
+
+main #articles .articles-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,21 +119,38 @@ main #index .articles-container {
   height: 100vh;
 }
 
-main #index .articles-container .article {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  border-right: 0.3rem solid #000000;
+@media only screen and (max-width: 1024px) {
+  main #articles .articles-container {
+    width: 100%;
+    height: initial;
+    max-width: initial;
+    max-height: initial;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: red;
+  }
 }
 
-main #index .articles-container .article .article-heading {
+main #articles .articles-container > img {
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+
+main #articles .articles-container .article {
   height: 100%;
   padding: 6rem;
   background-color: #ffffff;
+  cursor: pointer;
+  text-align: left;
   text-orientation: mixed;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -143,29 +161,140 @@ main #index .articles-container .article .article-heading {
   z-index: 2;
 }
 
-main #index .articles-container .article .article-heading h1 span {
-  text-decoration: underline;
+@media only screen and (max-width: 1024px) {
+  main #articles .articles-container .article {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-width: initial;
+    max-height: initial;
+    text-orientation: mixed;
+    -webkit-transform: none;
+            transform: none;
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+  }
 }
 
-main #index .articles-container .article .article-heading:hover {
-  -webkit-filter: invert(1);
-          filter: invert(1);
-}
-
-main #index .articles-container .article .article-text {
-  padding: 6rem;
+main #articles .articles-container .article span {
+  color: #dc1156;
+  font-size: 4.6rem;
+  font-family: "Bembo";
   display: none;
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  margin-right: 2.4rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  main #articles .articles-container .article span {
+    margin: 2.4rem 0 0 0;
+  }
+}
+
+main #articles .articles-container .active,
+main #articles .articles-container .article:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+main #articles .articles-container .active span,
+main #articles .articles-container .article:hover span {
+  display: block;
+}
+
+main #articles .articles-container .panel {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  max-width: 0;
+  overflow: hidden;
+  -webkit-transition: max-width 0.2s ease-out;
+  transition: max-width 0.2s ease-out;
+  border-left: 0.3rem solid #000000;
+  z-index: 3;
+}
+
+@media only screen and (max-width: 1024px) {
+  main #articles .articles-container .panel {
+    max-width: unset;
+    max-height: 0;
+    -webkit-transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out;
+  }
+}
+
+main #articles .articles-container .panel .article-text {
+  width: 100%;
+  height: 100%;
+  max-width: initial;
+  max-height: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  opacity: 0;
+  padding: 6rem;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  border-right: 0.3rem solid #000000;
+}
+
+main #articles .articles-container .panel .article-text .article-text-content {
+  max-height: 100%;
+  padding-right: 6rem;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  main #articles .articles-container .panel .article-text .article-text-content {
+    max-height: initial;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0;
+    overflow-y: hidden;
+  }
+}
+
+main #articles .articles-container .panel .article-text .article-text-content h1 {
+  margin-top: 2.4rem;
+}
+
+main #articles .articles-container .panel .article-text .article-text-content h1.conclusion {
+  margin-top: 6rem;
+}
+
+main #articles .articles-container .panel .article-text .article-text-content img {
+  margin-top: 2rem;
+}
+
+main #articles .articles-container .panel .article-text .article-text-content .reasons h2 {
+  margin-top: 2rem;
+}
+
+main #articles .articles-container ::-webkit-scrollbar {
+  width: 1.6rem;
+  margin-right: 6rem;
+}
+
+main #articles .articles-container ::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0.2rem solid #000000;
+}
+
+main #articles .articles-container ::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+main #articles .articles-container ::-webkit-scrollbar-thumb:hover {
+  background: #262626;
 }
 
 main #authors {
-  width: 100%;
-  height: 100vh;
-  max-width: initial;
-  max-height: initial;
   background-color: #000000;
 }
 
@@ -181,9 +310,9 @@ body {
 
 html h1,
 body h1 {
-  font: normal normal 90% "HKGrotesk-Bold", sans-serif;
+  font: normal normal 100% "HKGrotesk-Bold", sans-serif;
   font-size: 6.4rem;
-  line-height: 90%;
+  line-height: 100%;
 }
 
 html h2,
@@ -223,11 +352,9 @@ html button,
 body a,
 body button {
   font: normal normal 150% "Bembo";
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   line-height: 150%;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
   border: none;
   cursor: pointer;
 }

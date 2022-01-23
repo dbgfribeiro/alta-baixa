@@ -12,7 +12,7 @@ body {
   scroll-behavior: smooth;
 
   h1 {
-    @include font ($size: $heading, $line: 90%, $family: $hkgrotesk-bold);
+    @include font ($size: $heading, $line: 100%, $family: $hkgrotesk-bold);
   }
 
   h2 {
@@ -36,10 +36,8 @@ body {
 
   a,
   button {
-    @include font ($size: $text, $family: $bembo);
+    @include font ($size: $subtitle, $family: $bembo);
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
     border: none;
     cursor: pointer;
   }
