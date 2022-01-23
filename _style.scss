@@ -4,7 +4,8 @@ header {
     position: fixed;
     width: 100%;
     padding: 2rem;
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(0.8rem);
+    z-index: 3;
 
     ul {
       @include flex(column, flex-end);
@@ -41,7 +42,7 @@ main {
   }
 
   #intro {
-    padding: 12rem 6rem;
+    padding: 32rem 6rem;
 
     .info-container {
       h2 {
@@ -55,5 +56,61 @@ main {
         }
       }
     }
+  }
+
+  #index {
+    @include size(100%, 100vh);
+    background-color: $white;
+
+    .articles-container {
+      @include flex();
+      height: 100vh;
+
+      .article {
+        @include flex();
+        height: 100%;
+
+        border-right: 0.3rem solid $black;
+
+        .article-heading {
+          height: 100%;
+          padding: 6rem;
+
+          background-color: $white;
+
+          text-orientation: mixed;
+          transform: rotate(180deg);
+          writing-mode: vertical-rl;
+
+          cursor: pointer;
+          z-index: 2;
+
+          h1 {
+            span {
+              text-decoration: underline;
+            }
+          }
+
+          &:hover {
+            filter: invert(1);
+          }
+        }
+
+        .article-text {
+          padding: 6rem;
+          display: none;
+          transform: translate(-100%);
+
+          transition: 0.3s;
+
+          h2 {}
+        }
+      }
+    }
+  }
+
+  #authors {
+    @include size(100%, 100vh);
+    background-color: $black;
   }
 }

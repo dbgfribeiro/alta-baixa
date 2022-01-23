@@ -5,8 +5,8 @@
   }
 }
 
-@include fontFamily('HKGrotesk', '../assets/fonts/HKGrotesk-Regular.ttf');
-@include fontFamily('HKGrotesk-Bold', '../assets/fonts/HKGrotesk-Bold.ttf');
+@include fontFamily('HKGrotesk', '../assets/fonts/HKGrotesk-Regular');
+@include fontFamily('HKGrotesk-Bold', '../assets/fonts/HKGrotesk-Bold');
 
-@include fontFamily('Bembo', '../assets/fonts/BemboStd.ttf');
-@include fontFamily('Bembo-Semibold', '../assets/fonts/BemboStd-Semibold.ttf');
+@include fontFamily('Bembo', '../assets/fonts/BemboStd');
+@include fontFamily('Bembo-Semibold', '../assets/fonts/BemboStd-Semibold');

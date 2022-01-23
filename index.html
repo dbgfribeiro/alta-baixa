@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/global.css">
     <title>Alta&Baixa</title>
   </head>
@@ -11,7 +12,7 @@
   <body>
 
     <header>
-      <nav>
+      <nav id="nav">
         <a href="index.html"><img src="./assets/images/logo.svg" alt="logo-alta&baixa"/></a>
         <ul>
           <li>
@@ -39,13 +40,42 @@
         </div>
       </section>
 
-      <section id="index"></section>
+      <section id="index">
+        <div class="articles-container">
+          <div class="article">
+            <div class="article-heading">
+              <h1>Michael <span>Bierut</span></h1>
+            </div>
+            <div class="article-text">
+              <h2>“For the first ten years of my career, I worked for Massimo Vignelli, a designer who is legendary for using a very limited number of typefaces. Between 1980 and 1990, most of my projects were set in five fonts: Helvetica (naturally), Futura, Garamond No. 3, Century Expanded, and, of course, Bodoni...”</h2>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article-heading">
+              <h1>Catarina <span>Maçãs</span></h1>
+            </div>
+            <div class="article-text">
+              <h2>“For the first ten years of my career, I worked for Massimo Vignelli, a designer who is legendary for using a very limited number of typefaces. Between 1980 and 1990, most of my projects were set in five fonts: Helvetica (naturally), Futura, Garamond No. 3, Century Expanded, and, of course, Bodoni...”</h2>
+            </div>
+          </div>
+          <div class="article">
+            <div class="article-heading">
+              <h1>Joaquim <span>Marmelo</span></h1>
+            </div>
+            <div class="article-text">
+              <h2>“For the first ten years of my career, I worked for Massimo Vignelli, a designer who is legendary for using a very limited number of typefaces. Between 1980 and 1990, most of my projects were set in five fonts: Helvetica (naturally), Futura, Garamond No. 3, Century Expanded, and, of course, Bodoni...”</h2>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="authors"></section>
     </main>
 
     <footer></footer>
 
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/accordion.js"></script>
   </body>
 
 </html>
