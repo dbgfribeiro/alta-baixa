@@ -112,6 +112,7 @@ header .nav-filled #logo .transition {
   position: fixed;
   opacity: 0;
   color: #000000;
+  top: 1.5rem;
 }
 
 @media only screen and (max-width: 500px) {
@@ -124,6 +125,7 @@ header .nav-filled #logo .transition {
 header .nav #logo img:last-child,
 header .nav-filled #logo img:last-child {
   position: fixed;
+  top: 1.5rem;
   left: 13.1rem;
   margin-left: 0.8rem;
 }
@@ -331,16 +333,10 @@ main #home .home-content .home-letters {
   position: absolute;
 }
 
-main #home .home-content .home-letters img {
+main #home .home-content .home-letters #a,
+main #home .home-content .home-letters #b {
   width: 24rem;
-}
-
-main #home .home-content .home-letters img:first-child {
-  margin-top: -16rem;
-}
-
-main #home .home-content .home-letters img:last-child {
-  margin-top: 16rem;
+  position: absolute;
 }
 
 main #intro {
@@ -608,7 +604,14 @@ main #authors {
   padding: 32rem 6rem 6rem 6rem;
   text-align: right;
   background-color: #ffffff;
+  border-top: 0.3rem solid #000000;
   z-index: 1;
+}
+
+@media only screen and (max-width: 500px) {
+  main #authors {
+    padding: 32rem 6rem 16rem 6rem;
+  }
 }
 
 main #authors img {
@@ -624,9 +627,21 @@ main #authors img {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  main #authors h1 {
+    font-size: 3.2rem;
+  }
+}
+
 main #authors li span {
   font-family: "Bembo";
   font-size: 6.8rem;
+}
+
+@media only screen and (max-width: 500px) {
+  main #authors li span {
+    font-size: 4rem;
+  }
 }
 
 main #authors li:hover span {
@@ -731,6 +746,13 @@ body * {
   mix-blend-mode: exclusion;
   width: 3.2rem;
   height: 3.2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .theBall,
+  .theBall-outer {
+    display: none;
+  }
 }
 
 .theBall-outer {

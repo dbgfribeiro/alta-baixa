@@ -4,9 +4,6 @@ $(document).ready(function () {
   var initial = $static.width() + 18;
   var speed = 14;
 
-  $horizontal.css({
-    'left': initial,
-  });
   $(window).scroll(function () {
       var st = $(this).scrollTop();
       var newPos = (st * (speed/100)) + initial;

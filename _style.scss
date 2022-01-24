@@ -53,6 +53,7 @@ header {
         position: fixed;
         opacity: 0;
         color: $black;
+        top: 1.5rem;
 
         @include mobile {
           display: none;
@@ -61,6 +62,7 @@ header {
 
       img:last-child {
         position: fixed;
+        top: 1.5rem;
         left: 13.1rem;
         margin-left: 0.8rem;
 
@@ -197,16 +199,10 @@ main {
         @include flex($justify: space-around);
         position: absolute;
 
-        img {
+        #a,
+        #b {
           width: 24rem;
-
-          &:first-child {
-            margin-top: -16rem;
-          }
-
-          &:last-child {
-            margin-top: 16rem;
-          }
+          position: absolute;
         }
       }
     }
@@ -406,7 +402,12 @@ main {
     padding: 32rem 6rem 6rem 6rem;
     text-align: right;
     background-color: $white;
+    border-top: 0.3rem solid $black;
     z-index: 1;
+
+    @include mobile {
+      padding: 32rem 6rem 16rem 6rem;
+    }
 
     img {
       width: 20%;
@@ -419,10 +420,21 @@ main {
       }
     }
 
+    h1 {
+      @include mobile {
+        font-size: 3.2rem;
+      }
+    }
+
     li {
+
       span {
         font-family: $bembo;
         font-size: 6.8rem;
+
+        @include mobile {
+          font-size: 4rem;
+        }
       }
 
       &:hover {

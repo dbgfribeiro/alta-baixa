@@ -79,6 +79,10 @@ body {
   mix-blend-mode: exclusion;
   width: 3.2rem;
   height: 3.2rem;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .theBall-outer {
