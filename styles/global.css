@@ -103,19 +103,15 @@ header .nav-filled #logo:hover .fixed {
 
 header .nav #logo:hover .transition,
 header .nav-filled #logo:hover .transition {
-  -webkit-transform: none;
-          transform: none;
+  opacity: 1;
 }
 
 header .nav #logo .transition,
 header .nav-filled #logo .transition {
   width: 68rem;
   position: fixed;
-  opacity: 1;
-  -webkit-transform: translateX(-100vw);
-          transform: translateX(-100vw);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  opacity: 0;
+  color: #000000;
 }
 
 @media only screen and (max-width: 500px) {
@@ -128,6 +124,7 @@ header .nav-filled #logo .transition {
 header .nav #logo img:last-child,
 header .nav-filled #logo img:last-child {
   position: fixed;
+  left: 13.1rem;
   margin-left: 0.8rem;
 }
 
@@ -319,6 +316,10 @@ main #home .home-content > img {
 }
 
 main #home .home-content .home-letters {
+  width: 100%;
+  height: 100%;
+  max-width: initial;
+  max-height: initial;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,11 +329,10 @@ main #home .home-content .home-letters {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: absolute;
-  height: 100%;
 }
 
 main #home .home-content .home-letters img {
-  width: 15%;
+  width: 24rem;
 }
 
 main #home .home-content .home-letters img:first-child {
@@ -345,10 +345,11 @@ main #home .home-content .home-letters img:last-child {
 
 main #intro {
   padding: 16rem 6rem;
+  background-color: #ffffff;
 }
 
 main #intro .info-container {
-  width: 75%;
+  width: 72%;
 }
 
 @media only screen and (max-width: 500px) {
@@ -418,13 +419,19 @@ main #articles .articles-container > img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 1024px) {
+  main #articles .articles-container > img {
+    display: none;
+  }
 }
 
 main #articles .articles-container .article {
   height: 100%;
   padding: 6rem;
   background-color: #ffffff;
-  cursor: pointer;
   text-align: left;
   text-orientation: mixed;
   -webkit-transform: rotate(180deg);
@@ -432,8 +439,7 @@ main #articles .articles-container .article {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  cursor: pointer;
-  z-index: 2;
+  z-index: 3;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -456,7 +462,7 @@ main #articles .articles-container .article {
 
 main #articles .articles-container .article span {
   color: #dc1156;
-  font-size: 4.6rem;
+  font-size: 4.8rem;
   font-family: "Bembo";
   display: none;
   margin-right: 2.4rem;
@@ -601,13 +607,21 @@ main #authors {
   position: relative;
   padding: 32rem 6rem 6rem 6rem;
   text-align: right;
+  background-color: #ffffff;
+  z-index: 1;
 }
 
 main #authors img {
-  width: 30%;
+  width: 20%;
   position: absolute;
   left: 6rem;
   bottom: 6rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  main #authors img {
+    display: none;
+  }
 }
 
 main #authors li span {
@@ -624,9 +638,11 @@ body {
   font: normal normal 150% "HKGrotesk", sans-serif;
   font-size: 1.6rem;
   line-height: 150%;
+  min-height: 100%;
   font-size: 10px;
   overflow: auto;
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 html h1,
@@ -677,7 +693,7 @@ body button {
   line-height: 150%;
   text-decoration: none;
   border: none;
-  cursor: pointer;
+  cursor: none;
 }
 
 html a:focus, html a:active, html a:visited, html a:link, html a:hover,
@@ -708,5 +724,53 @@ body * {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.theBall,
+.theBall-outer {
+  mix-blend-mode: exclusion;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.theBall-outer {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  z-index: 5000;
+  pointer-events: none !important;
+}
+
+.theBall {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  -webkit-transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.dark_page .theBall,
+.coloring .theBall {
+  background-color: #000000;
+}
+
+.zooming.theBall {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+::-moz-selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #000000;
+  color: #ffffff;
 }
 /*# sourceMappingURL=global.css.map */
